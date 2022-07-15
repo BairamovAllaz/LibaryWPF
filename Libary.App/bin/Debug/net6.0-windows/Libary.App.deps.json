@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Libary.App/1.0.0": {
+        "dependencies": {
+          "Libary.Model": "1.0.0"
+        },
+        "runtime": {
+          "Libary.App.dll": {}
+        }
+      },
+      "Libary.Model/1.0.0": {
+        "runtime": {
+          "Libary.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Libary.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Libary.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

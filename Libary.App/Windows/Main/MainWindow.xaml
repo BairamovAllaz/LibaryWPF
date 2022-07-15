@@ -1,0 +1,59 @@
+﻿<Window x:Class="Libary.App.Windows.Main.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Libary"
+        Height="450" Width="800"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowStyle.xaml"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0"
+                 Style="{StaticResource StyleDefault}"
+                 ItemsSource="{Binding Books}"
+                 SelectedItem="{Binding Book}"/>
+        <StackPanel Grid.Column="1">
+            <StackPanel Style="{StaticResource StyleStackPanelLeft}">
+                <Label Content="Name"
+                       Style="{StaticResource StyleLabel}"/>
+                <TextBox x:Name="InputTitle"
+                         Style="{StaticResource StyleInput}"
+                         Text="{Binding Book.Title}"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StyleStackPanelLeft}">
+                <Label Content="Author"
+                       Style="{StaticResource StyleLabel}"/>
+                <TextBox x:Name="InputAuthor"
+                         Style="{StaticResource StyleInput}"
+                         Text="{Binding Book.Author}"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StyleStackPanelLeft}">
+                <Label Content="Genre"
+                       Style="{StaticResource StyleLabel}"/>
+                <TextBox x:Name="InputGenre"
+                         Style="{StaticResource StyleInput}"
+                         Text="{Binding Book.Genre}"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StyleStackPanelCenter}">
+                <Button Content="Clear"
+                        Style="{StaticResource StyleButtonClear}"
+                        Click="ButtonClear_OnClick"/>
+                <Button Content="Delete"
+                        Style="{StaticResource StyleButtonDelete}"
+                        Click="ButtonDelete_OnClick"/>
+                <Button Content="Save"
+                        Style="{StaticResource StyleButtonSave}"
+                        Click="ButtonSave_OnClick"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

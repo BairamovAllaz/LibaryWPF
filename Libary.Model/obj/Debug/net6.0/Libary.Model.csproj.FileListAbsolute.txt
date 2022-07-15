@@ -1,0 +1,12 @@
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\bin\Debug\net6.0\Libary.Model.deps.json
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\bin\Debug\net6.0\Libary.Model.dll
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\bin\Debug\net6.0\Libary.Model.pdb
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\obj\Debug\net6.0\Libary.Model.csproj.AssemblyReference.cache
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\obj\Debug\net6.0\Libary.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\obj\Debug\net6.0\Libary.Model.AssemblyInfoInputs.cache
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\obj\Debug\net6.0\Libary.Model.AssemblyInfo.cs
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\obj\Debug\net6.0\Libary.Model.csproj.CoreCompileInputs.cache
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\obj\Debug\net6.0\Libary.Model.dll
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\obj\Debug\net6.0\refint\Libary.Model.dll
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\obj\Debug\net6.0\Libary.Model.pdb
+C:\Users\ellez\OneDrive\Programing\Csharp\Libary\Libary.Model\obj\Debug\net6.0\ref\Libary.Model.dll
