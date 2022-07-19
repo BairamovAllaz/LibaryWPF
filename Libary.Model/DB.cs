@@ -38,11 +38,11 @@ public static class DB
         command.ExecuteNonQuery();
         db.Close();
     }
-    public static void UpdateBook(Book book)
+    public static void UpdateBook(Book book,int Id)
     {
         var db = new SqliteConnection(connectionstring);
         db.Open();
-        var sql = $"UPDATE table_books SET title = '{book.Title}',Autor = '{book.Author}',genre = '{book.Genre}' WHERE id = {book.Id}";
+        var sql = $"UPDATE table_books SET title = '{book.Title}',Author = '{book.Author}',genre = '{book.Genre}' WHERE id = {Id}";
         var command = new SqliteCommand(sql, db);
         command.ExecuteNonQuery();
         db.Close();

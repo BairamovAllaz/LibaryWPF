@@ -1,5 +1,5 @@
 ﻿<Window x:Class="Libary.App.Windows.Main.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -17,7 +17,10 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="0"
+        <StackPanel Grid.Column="0">
+            <TextBox TextChanged="Search_InputBox"
+                     x:Name="SearchText"/>
+            <ListView
                   x:Name="ListOfBooks"
                  Style="{StaticResource StyleDefault}"
                  ItemsSource="{Binding Books}"
@@ -31,27 +34,28 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        </StackPanel>
         <StackPanel Grid.Column="1">
             <StackPanel Style="{StaticResource StyleStackPanelLeft}">
                 <Label Content="Name"
                        Style="{StaticResource StyleLabel}"/>
                 <TextBox x:Name="InputTitle"
                          Style="{StaticResource StyleInput}"
-                         Text="{Binding Book.Title,UpdateSourceTrigger=Default}"/>
+                         Text="{Binding Book.Title,Mode = OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel Style="{StaticResource StyleStackPanelLeft}">
                 <Label Content="Author"
                        Style="{StaticResource StyleLabel}"/>
                 <TextBox x:Name="InputAuthor"
                          Style="{StaticResource StyleInput}"
-                         Text="{Binding Book.Author,UpdateSourceTrigger=Default}"/>
+                         Text="{Binding Book.Author,Mode = OneWay,UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel Style="{StaticResource StyleStackPanelLeft}">
                 <Label Content="Genre"
                        Style="{StaticResource StyleLabel}"/>
                 <TextBox x:Name="InputGenre"
                          Style="{StaticResource StyleInput}"
-                         Text="{Binding Book.Genre,UpdateSourceTrigger=Default}"/>
+                         Text="{Binding Book.Genre,Mode = OneWay,UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel Style="{StaticResource StyleStackPanelCenter}">
                 <Button Content="Clear"

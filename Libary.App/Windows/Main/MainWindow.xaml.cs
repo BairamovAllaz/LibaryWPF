@@ -1,7 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using Libary.App.Annotations;
 using Libary.Model;
 namespace Libary.App.Windows.Main
@@ -26,6 +29,15 @@ namespace Libary.App.Windows.Main
             _book = new Book();
             Books = new ObservableCollection<Book>(DB.GetBooks());
             InitializeComponent();
+            
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(ListOfBooks.ItemsSource);
+            view.Filter = item =>
+            {
+                if(string.IsNullOrEmpty(SearchText.Text))
+                    return true;
+                else
+                    return ((item as Book).Title.IndexOf(SearchText.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            };
         }
         public event PropertyChangedEventHandler? PropertyChanged;
         [NotifyPropertyChangedInvocator]
@@ -39,7 +51,6 @@ namespace Libary.App.Windows.Main
         }
         private void Clear()
         {
-            //TODO: FIX CLEAR METHOD
             ListOfBooks.UnselectAll();
             InputTitle.Clear();
             InputAuthor.Clear();
@@ -48,15 +59,33 @@ namespace Libary.App.Windows.Main
         private void ButtonDelete_OnClick(object sender, RoutedEventArgs e)
         {
             Books.Remove(Book);
+            DB.DeleteBook(Book.Id);
             Clear();
         }
         private void ButtonSave_OnClick(object sender, RoutedEventArgs e)
         {
+            var book = new Book()
+            {
+                Title = InputTitle.Text,
+                Author = InputAuthor.Text,
+                Genre = InputGenre.Text
+            };
             if (!Books.Contains(Book))
             {
-                Books.Add(Book);
-                Clear();
+                Books.Add(book);
+                DB.AddBook(book);
             }
+            else
+            {
+                Books[ListOfBooks.SelectedIndex] = book;
+                DB.UpdateBook(book,Book.Id);
+            }
+            Clear();
+        }
+
+        private void Search_InputBox(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(ListOfBooks.ItemsSource).Refresh();
         }
     }
 }
