@@ -11,4 +11,10 @@
       <ProjectReference Include="..\Libary.Model\Libary.Model.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="books.db">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

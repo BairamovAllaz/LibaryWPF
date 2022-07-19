@@ -3,14 +3,27 @@ using System.Runtime.CompilerServices;
 namespace Libary.Model;
 public class Book : INotifyPropertyChanged
 {
+    private int _id;
+
+    public int Id
+    {
+        get => _id;
+        set
+        {
+            if (value <= 0) return; 
+            if(value == _id) return;
+            _id = value;
+            OnPropertyChanged(nameof(Id));
+        } 
+
+    }
+    
     private string _title;
     public string Title
     {
         get => _title ;
         set
         {
-            if (string.IsNullOrWhiteSpace(value)) return;
-            if (value is null) return;
             if (value == _title) return;
             _title = value;
             OnPropertyChanged(nameof(Title));
@@ -19,11 +32,9 @@ public class Book : INotifyPropertyChanged
     private string _author;
     public string Author
     {
-        get => _title ;
+        get => _author ;
         set
         {
-            if (string.IsNullOrWhiteSpace(value)) return;
-            if (value is null) return;
             if (value == _author) return;
             _author = value;
             OnPropertyChanged(nameof(Author));
@@ -35,8 +46,6 @@ public class Book : INotifyPropertyChanged
         get => _genre;
         set
         {
-            if (string.IsNullOrWhiteSpace(value)) return;
-            if (value is null) return;
             if (value == _genre) return;
             _genre = value;
             OnPropertyChanged(nameof(Genre));

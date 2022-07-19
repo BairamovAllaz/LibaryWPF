@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Controls;
 using Libary.App.Annotations;
 using Libary.Model;
 namespace Libary.App.Windows.Main
@@ -25,7 +24,7 @@ namespace Libary.App.Windows.Main
         public MainWindow()
         {
             _book = new Book();
-            Books = new ObservableCollection<Book>();
+            Books = new ObservableCollection<Book>(DB.GetBooks());
             InitializeComponent();
         }
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -40,6 +39,8 @@ namespace Libary.App.Windows.Main
         }
         private void Clear()
         {
+            //TODO: FIX CLEAR METHOD
+            ListOfBooks.UnselectAll();
             InputTitle.Clear();
             InputAuthor.Clear();
             InputGenre.Clear();

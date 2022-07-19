@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "TLfuVO1vdo6jZILDuzfXUyzt3k2ObgB3MymZSXc9YQtskEqduShqN9JMZIud7+7woBe2C/QdCJXrosUxFL+GUg==",
+  "dgSpecHash": "KQHm8x7TKWghYjGIJ241OFnV+IsbODQXYitaU/qwBDLzsyUlWgPhI2d66IX+jsg/sjdV91ABPxt2/K5ii0nVPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ellez\\OneDrive\\Programing\\Csharp\\Libary\\Libary.Model\\Libary.Model.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ellez\\.nuget\\packages\\microsoft.data.sqlite\\6.0.7\\microsoft.data.sqlite.6.0.7.nupkg.sha512",
+    "C:\\Users\\ellez\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.7\\microsoft.data.sqlite.core.6.0.7.nupkg.sha512",
+    "C:\\Users\\ellez\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
+    "C:\\Users\\ellez\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
+    "C:\\Users\\ellez\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",
+    "C:\\Users\\ellez\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.0.6\\sqlitepclraw.provider.e_sqlite3.2.0.6.nupkg.sha512",
+    "C:\\Users\\ellez\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -17,31 +17,41 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0"
+        <ListView Grid.Column="0"
+                  x:Name="ListOfBooks"
                  Style="{StaticResource StyleDefault}"
                  ItemsSource="{Binding Books}"
-                 SelectedItem="{Binding Book}"/>
+                 SelectedItem="{Binding Book}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}"
+                                    Header="Title"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Author}"
+                                    Header="Author"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <StackPanel Grid.Column="1">
             <StackPanel Style="{StaticResource StyleStackPanelLeft}">
                 <Label Content="Name"
                        Style="{StaticResource StyleLabel}"/>
                 <TextBox x:Name="InputTitle"
                          Style="{StaticResource StyleInput}"
-                         Text="{Binding Book.Title}"/>
+                         Text="{Binding Book.Title,UpdateSourceTrigger=Default}"/>
             </StackPanel>
             <StackPanel Style="{StaticResource StyleStackPanelLeft}">
                 <Label Content="Author"
                        Style="{StaticResource StyleLabel}"/>
                 <TextBox x:Name="InputAuthor"
                          Style="{StaticResource StyleInput}"
-                         Text="{Binding Book.Author}"/>
+                         Text="{Binding Book.Author,UpdateSourceTrigger=Default}"/>
             </StackPanel>
             <StackPanel Style="{StaticResource StyleStackPanelLeft}">
                 <Label Content="Genre"
                        Style="{StaticResource StyleLabel}"/>
                 <TextBox x:Name="InputGenre"
                          Style="{StaticResource StyleInput}"
-                         Text="{Binding Book.Genre}"/>
+                         Text="{Binding Book.Genre,UpdateSourceTrigger=Default}"/>
             </StackPanel>
             <StackPanel Style="{StaticResource StyleStackPanelCenter}">
                 <Button Content="Clear"
